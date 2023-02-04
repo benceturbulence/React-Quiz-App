@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function StartPage({setFetchUrl}) {
 
@@ -10,56 +10,51 @@ const [type, setType] = useState('')
 
 const navigate = useNavigate()
 
-console.log(category)
-console.log(amount)
-console.log(difficulty)
-console.log(type)
-
 const categoryObj = [
-{label: 'Any category', id: ''},
-{label: 'General Konwledge', id: 9},
-{label: 'Entertainment: Books', id: 10},
-{label: 'Entertainment: Film', id: 11},
-{label: 'Entertainment: Music', id: 12},
-{label: 'Entertainment: Musical & Theatres', id: 13},
-{label: 'Entertainment: Television', id: 14},
-{label: 'Entertainment: Video Games', id: 15},
-{label: 'Entertainment: Board Games', id: 16},
-{label: 'Science & Nature', id: 17},
-{label: 'Science: Computers', id: 18},
-{label: 'Science:  Mathematics', id: 19},
-{label: 'Mythology', id: 20},
-{label: 'Sports', id: 21},
-{label: 'Geography', id: 22},
-{label: 'History', id: 23},
-{label: 'Politics', id: 24},
-{label: 'Art', id: 25},
-{label: 'Celebrities', id: 26},
-{label: 'Animals', id: 27},
-{label: 'Vehicles', id: 28},
-{label: 'Entertainment Comics', id: 29},
-{label: 'Science Gadgets', id: 30},
-{label: 'Entertainment Japanese Anime & Manga', id: 31},
-{label: 'Entertainment Cartoon & Animations', id: 32}
+  {label: 'Any category', id: ''},
+  {label: 'General Konwledge', id: 9},
+  {label: 'Entertainment: Books', id: 10},
+  {label: 'Entertainment: Film', id: 11},
+  {label: 'Entertainment: Music', id: 12},
+  {label: 'Entertainment: Musical & Theatres', id: 13},
+  {label: 'Entertainment: Television', id: 14},
+  {label: 'Entertainment: Video Games', id: 15},
+  {label: 'Entertainment: Board Games', id: 16},
+  {label: 'Science & Nature', id: 17},
+  {label: 'Science: Computers', id: 18},
+  {label: 'Science:  Mathematics', id: 19},
+  {label: 'Mythology', id: 20},
+  {label: 'Sports', id: 21},
+  {label: 'Geography', id: 22},
+  {label: 'History', id: 23},
+  {label: 'Politics', id: 24},
+  {label: 'Art', id: 25},
+  {label: 'Celebrities', id: 26},
+  {label: 'Animals', id: 27},
+  {label: 'Vehicles', id: 28},
+  {label: 'Entertainment Comics', id: 29},
+  {label: 'Science Gadgets', id: 30},
+  {label: 'Entertainment Japanese Anime & Manga', id: 31},
+  {label: 'Entertainment Cartoon & Animations', id: 32}
 ]
 
 const typeObj = [
-{label: 'Any Type', id: ''},
-{label: 'Multiple choice', id: 'multiple'},
-{label: 'True / False', id: 'boolean'},
+  {label: 'Any Type', id: ''},
+  {label: 'Multiple choice', id: 'multiple'},
+  {label: 'True / False', id: 'boolean'},
 ]
 
 const difficultyObj = [
-{label: 'Any Difficulty', id: ''},
-{label: 'Easy', id: 'easy'},
-{label: 'Medium', id: 'medium'},
-{label: 'High', id: 'hard'}
+  {label: 'Any Difficulty', id: ''},
+  {label: 'Easy', id: 'easy'},
+  {label: 'Medium', id: 'medium'},
+  {label: 'High', id: 'hard'}
 ]
 
 const createFetchURL = () => {
-  let categoryChoice = category !='' ? `&category=${category}` : ''
-  let difficultyChoice = difficulty !='' ? `&difficulty=${difficulty}` : ''
-  let typeChoice = type !='' ? `&type=${type}` : ''
+  let categoryChoice = category !=='' ? `&category=${category}` : ''
+  let difficultyChoice = difficulty !=='' ? `&difficulty=${difficulty}` : ''
+  let typeChoice = type !=='' ? `&type=${type}` : ''
 
   const root=`https://opentdb.com/api.php?amount=${amount}${categoryChoice}${difficultyChoice}${typeChoice}`
 
